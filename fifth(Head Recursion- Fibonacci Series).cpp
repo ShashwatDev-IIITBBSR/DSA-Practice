@@ -1,5 +1,5 @@
 #include <iostream.h>
-using namespace std;
+using namespace std; 
 int fib(int n)
 {
     int h;
@@ -25,3 +25,4 @@ int main()
     cout<<a<<"th number of fibonacci series is "<<" ";
     cout<<fib(a);
 }
+
