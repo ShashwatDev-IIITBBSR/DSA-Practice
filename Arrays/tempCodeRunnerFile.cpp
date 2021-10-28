@@ -32,6 +32,16 @@ void del_element(struct array *arr,int index)
     }
     arr->length--;
 }
+void insert_element(struct array *arr,int index,int value)
+{
+    int i;
+    for(i=arr->length+1;i>index;i--)
+    {
+        arr->A[i]=arr->A[i-1];
+    }
+    arr->A[index]=value;
+    arr->length++;
+}
 int main()
 {
     array *q;
@@ -42,5 +52,8 @@ int main()
     display(*q);
     cout<<endl;
     del_element(q,4);
+    display(*q);
+    insert_element(q,4,100);
+    cout<<endl;
     display(*q);
 }
