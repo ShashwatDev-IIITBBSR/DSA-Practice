@@ -43,9 +43,20 @@ void display_linked_list(struct node *n)
         n=n->next;
     }
 }
+void recursive_display(struct node *n)
+{
+    if(n!=NULL)
+    {
+        cout<<n->data<<" ";
+        recursive_display(n->next);
+    }
+}
 int main()
 {
     struct  node *first;
     first=input();
     display_linked_list(first);
+    cout<<endl;
+    display_linked_list(first);
 }
+
