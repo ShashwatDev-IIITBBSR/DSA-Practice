@@ -45,25 +45,24 @@ void display_linked_list(struct node *n)
 }
 void recursive_display(struct node *n)
 {
-    while(true)
+    if(n!=NULL)
     {
-        if(n!=NULL)
-        {
-            cout<<n->data<<" ";
-            recursive_display(n->next);
-        }
+        cout<<n->data<<" ";
+        recursive_display(n->next);
     }
 }
-void reverse_display_linkedlist(struct node *n)
+void deletion_at_position(struct node *n,int position)
 {
-    while(true)
+    struct node *k;
+    int i=2;
+    while(i<position)
     {
-        if(n!=NULL)
-        {
-            recursive_display(n->next);
-            cout<<n->data<<" ";
-        }
-    }    
+        n=n->next;
+        i++;
+    }
+    k=n->next;
+    n->next=k->next;
+    k->next=0;
 }
 int main()
 {
@@ -73,5 +72,7 @@ int main()
     cout<<endl;
     display_linked_list(first);
     cout<<endl;
-    reverse_display_linkedlist(first);
+    deletion_at_position(first,4);
+    cout<<endl;
+    display_linked_list(first);
 }

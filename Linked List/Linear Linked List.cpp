@@ -51,6 +51,19 @@ void recursive_display(struct node *n)
         recursive_display(n->next);
     }
 }
+void deletion_at_position(struct node *n,int position)
+{
+    struct node *k;
+    int i=2;
+    while(i<position)
+    {
+        n=n->next;
+        i++;
+    }
+    k=n->next;
+    n->next=k->next;
+    k->next=0;
+}
 int main()
 {
     struct  node *first;
@@ -58,5 +71,8 @@ int main()
     display_linked_list(first);
     cout<<endl;
     display_linked_list(first);
+    cout<<endl;
+    deletion_at_position(first,4);
+    cout<<endl;
+    display_linked_list(first);
 }
-
